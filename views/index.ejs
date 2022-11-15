@@ -1,17 +1,16 @@
 <html>
 <head> 
 <title> ToDo App </title>
- <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
  <link href="/styles.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="container">
-<h2> To-do List </h2>
+<h1> To-do List </h1>
 
 <form action ="/addtask" method="POST">
 
-<input type="text" name="newtask" placeholder="add new task">
+<input type="text" name="newtask" placeholder="add a new task">
 <button> Add Task </button>
 
 
@@ -22,8 +21,15 @@
 <% } %>
 
 <button formaction="/removetask" type="submit" id="top"> Remove </button>
-
+<button formaction="/completetask" type="submit" id="top"> Complete </button>
 </form>
+
+<h2> Completed tasks </h2>
+
+ <% for(var i = 0; i < complete.length; i++){ %>
+    <li><input type="checkbox" checked><%= complete[i] %> </li>
+<% } %>
+
 </div>
 
 </body>
